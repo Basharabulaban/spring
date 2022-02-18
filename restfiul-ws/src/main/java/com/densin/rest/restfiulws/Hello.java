@@ -19,5 +19,10 @@ public class Hello {
 		return "hello";
 		
 	}
+	@GetMapping( path="hello-world-been")
+	public HellowWorldBean hellowWorldBean() {
+		return  new HellowWorldBean("Hello World");
+		
+	}
 
 }
