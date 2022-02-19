@@ -1,4 +1,19 @@
-package com.densin.rest.restfiulws;
+
+
+//1 
+//retrieve All todos for the users
+//get /users/{user_name}/todo
+//2
+//delete a todo of the user
+//delete /users/{user_name}/todo/{todo_id}
+//3
+//edit a todo 
+//put /user/{user_name}/todos/{todo_id}
+//4
+//create a new todo
+//post  /users/{user_name}/todos
+
+package com.densin.rest.restfiulws.helloworld;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -31,7 +46,9 @@ public class Hello {
 	
 	@GetMapping( path="hello-world-path-variable/{name}")
 	public HellowWorldBean hellowWorldBean(@PathVariable String name) {
+		
 		return  new HellowWorldBean(String.format("Hello World,%s",name));
+	//	return new RuntimeException("something went wrong");
 		
 	}
 
