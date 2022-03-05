@@ -26,6 +26,26 @@ public class TodoResource {
 	@Autowired
 
 	private TodoHardcodedServices todoservice;
+	
+	
+	@CrossOrigin
+	@GetMapping("/basicauth") // http://localhost:8083/users/bashar/todos
+
+	public AuthenticationBean validate_u_p(@PathVariable long id)  { // throws InterruptedException
+
+		
+
+		return new AuthenticationBean("You are authenticated");
+	}
+	
+	
+
+	private AuthenticationBean AuthenticationBean(String string) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
 
 	@CrossOrigin
 	@GetMapping("/users/{username}/todos") // http://localhost:8083/users/bashar/todos
