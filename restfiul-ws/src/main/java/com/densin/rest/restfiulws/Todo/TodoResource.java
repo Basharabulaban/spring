@@ -31,7 +31,7 @@ public class TodoResource {
 	@CrossOrigin
 	@GetMapping("/basicauth") // http://localhost:8083/users/bashar/todos
 
-	public AuthenticationBean validate_u_p(@PathVariable long id)  { // throws InterruptedException
+	public AuthenticationBean validate_u_p()  { // throws InterruptedException
 
 		
 
