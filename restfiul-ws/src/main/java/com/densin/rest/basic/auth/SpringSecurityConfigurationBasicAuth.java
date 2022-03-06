@@ -1,4 +1,4 @@
-package com.densin.rest.restfiulws.basic.auth;
+package com.densin.rest.basic.auth;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
