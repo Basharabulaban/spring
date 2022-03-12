@@ -8,7 +8,16 @@ public class  JwtTokenRequest implements Serializable {
 
   private String username;
     private String password;
+  
+//    {
+//    	  "token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJiYXNoYXJ1c3IiLCJleHAiOjE2NDc2ODkxNDcsImlhdCI6MTY0NzA4NDM0N30.5thgJ2NJdTJAMVH1B0ec75-eYDjEP0dnqNoEqZFc6PsJpr0APTodFco4lo0zSXTXpIl61VswB7okm1lqXrmNtw"
 
+    // after 
+    // verified    "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJiYXNoYXJ1c3IiLCJleHAiOjE2NDc2ODkxNDcsImlhdCI6MTY0NzA4NDM0N30.aptrQyM1Pct11Y-k2mBf4X8oLufgNhjgHxMfJ4Udm8iahGuoyPfJQuroK2Du9ff8UJm4HrGRc3_yH8rmIqv87Q"
+    //    	}
+    
+    //   Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJiYXNoYXJ1c3IiLCJleHAiOjE2NDc2ODkxNDcsImlhdCI6MTY0NzA4NDM0N30.5thgJ2NJdTJAMVH1B0ec75-eYDjEP0dnqNoEqZFc6PsJpr0APTodFco4lo0zSXTXpIl61VswB7okm1lqXrmNtw
+    
     public JwtTokenRequest() {
         super();
     }
