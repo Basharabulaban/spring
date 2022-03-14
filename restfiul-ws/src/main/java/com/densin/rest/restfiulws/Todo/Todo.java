@@ -2,7 +2,11 @@ package com.densin.rest.restfiulws.Todo;
 
 import java.util.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+@Entity
 public class Todo {
+	@Id
 	
 	private long id;
 	private String username;
