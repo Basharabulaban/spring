@@ -8,7 +8,7 @@ import javax.persistence.Id;
 public class Todo {
 	@Id
 	
-	private long id;
+	private Long id;
 	private String username;
 	private String description;
 	private Date targetDate;
