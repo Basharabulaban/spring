@@ -17,7 +17,7 @@ public class Todo {
 		
 	}
 	
-	public Todo(long id, String username, String description, Date targetDate, boolean isDOne) {
+	public Todo(Long id, String username, String description, Date targetDate, boolean isDOne) {
 		super();
 		this.id = id;
 		this.username = username;
@@ -28,7 +28,7 @@ public class Todo {
 	public long getId() {
 		return id;
 	}
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 	public String getUsername() {
