@@ -1,0 +1,1 @@
+insert into Todo(id, username,description,target_Date,is_Done) values(10001,'Basharusr','learn JPA',sysdate(),false);
