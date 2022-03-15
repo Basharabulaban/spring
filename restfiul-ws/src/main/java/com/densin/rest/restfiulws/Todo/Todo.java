@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 @Entity
 public class Todo {
+	
 	@Id
 	@GeneratedValue
 	
@@ -15,18 +16,18 @@ public class Todo {
 	private String username;
 	private String description;
 	private Date targetDate;
-	private boolean isDOne;
+	private boolean isDone;
 	protected Todo() {
 		
 	}
 	
-	public Todo(Long id, String username, String description, Date targetDate, boolean isDOne) {
+	public Todo(Long id, String username, String description, Date targetDate, boolean isDone) {
 		super();
 		this.id = id;
 		this.username = username;
 		this.description = description;
-		this.targetDate = targetDate;
-		this.isDOne = isDOne;
+		this.targetDate = targetDate;  ///   because of targetDate the Date has cabs , typically you need to use the underscore 
+		this.isDone = isDone;
 	}
 	public long getId() {
 		return id;
@@ -53,10 +54,10 @@ public class Todo {
 		this.targetDate = targetDate;
 	}
 	public boolean isDOne() {
-		return isDOne;
+		return isDone;
 	}
 	public void setDOne(boolean isDOne) {
-		this.isDOne = isDOne;
+		this.isDone = isDone;
 	}
 
 	@Override
