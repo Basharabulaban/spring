@@ -26,7 +26,7 @@ public class Todo {
 		this.id = id;
 		this.username = username;
 		this.description = description;
-		this.targetDate = targetDate;  ///   because of targetDate the Date has cabs , typically you need to use the underscore 
+		this.targetDate = targetDate;  ///   because of targetDate the Date has cabs D , typically you need to use the underscore 
 		this.isDone = isDone;
 	}
 	public long getId() {
