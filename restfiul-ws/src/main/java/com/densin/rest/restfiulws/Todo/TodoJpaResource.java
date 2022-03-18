@@ -2,6 +2,7 @@ package com.densin.rest.restfiulws.Todo;
 
 import java.net.URI;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -18,45 +19,35 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
 @RestController
-
-// ythis to advise spring to allow recieve request from
-//// @CrossOrigin(origins = "http://localhost:8083") 											// http://localhost:4200
-
 public class TodoJpaResource {
-	@Autowired
 
+	@Autowired
 	private TodoHardcodedServices todoservice;
-	
-	
+
+	@Autowired
+	private TodoJpaRepository todoJpaRepository;
+
 	@CrossOrigin
 	@GetMapping("/jpa/basicauth") // http://localhost:8083/users/bashar/todos
 
-	public AuthenticationBean validate_u_p()  { // throws InterruptedException
-
-		
-
+	public AuthenticationBean validate_u_p() { // throws InterruptedException
 		return new AuthenticationBean("You are authenticated");
 	}
-	
-	
 
 	private AuthenticationBean AuthenticationBean(String string) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-
-
 	@CrossOrigin
-	@GetMapping("/jpa/users/{username}/todos") // http://localhost:8083/users/bashar/todos
-	// http://localhost:8083/users/basharusr/todos
+	@GetMapping("/jpa/users/{username}/todos") // http://jpa/localhost:8083/users/bashar/todos
 
-	public List<Todo> getAllTodos(@PathVariable String username) throws InterruptedException { // throws
-																								// InterruptedException
+	public List<Todo> getAllTodos(@PathVariable String username) {
 
-		// Thread.sleep(30000);
+		System.out.println(username);
 
-		return todoservice.findall();
+		return todoJpaRepository.findByusername(username);
+
 	}
 
 	@CrossOrigin
@@ -68,11 +59,12 @@ public class TodoJpaResource {
 	// but cannot be translated into a null value due to being declared as a
 	// primitive type. Consider declaring it as object wrapper for the corresponding
 	// primitive type."
-	public Todo getspecficTodos(@PathVariable long id) throws InterruptedException { // throws InterruptedException
+	public Optional<Todo> getspecficTodos(@PathVariable long id) throws InterruptedException { // throws
+																								// InterruptedException
 
 		// Thread.sleep(30000);
-
-		return todoservice.findbyid(id);
+		return todoJpaRepository.findById(id);
+		// return todoservice.findbyid(id);
 	}
 
 	// delete/users/{usename}/todos/{id}
@@ -82,32 +74,27 @@ public class TodoJpaResource {
 // use Talend API Tester - Free Edition
 	//
 	@CrossOrigin
-	@DeleteMapping("/jpa/users/{username}/todos/{id}") // http://localhost:8083/users/basharusr/todos/1
+	@DeleteMapping("/jpa/users/{username}/todos/{id}") // http://localhost:8083/jpa/users/basharusr/todos/10001
 	public ResponseEntity<Void> deleteTodos(@PathVariable String username, @PathVariable long id) {
 
-		Todo todo = todoservice.deleteById(id);
-		if (todo != null) {
-			return ResponseEntity.noContent().build();
+		todoJpaRepository.deleteById(id); // todoJpaRepository.delete(entity); ///todoservice.deleteById(id);
 
-		}
-		return ResponseEntity.notFound().build();
+		return ResponseEntity.noContent().build();
+
+		// return ResponseEntity.notFound().build();
 	}
-	// edit update a todo
-	// put /users/{username}/todos/{id}
 
 	@CrossOrigin
 	@PutMapping("/jpa/users/{username}/todos/{id}") // http://localhost:8083/users/basharusr/todos/1
 	public ResponseEntity<Todo> updateTodos(@PathVariable String username, @PathVariable long id,
 			@RequestBody Todo todo) {
+		todo.setUsername(username);
+		
+		Todo todoUpdate =todoJpaRepository.save(todo);
 
-		// if you need to have @RequestBody then you need to have default constructor
-
-		Todo todoUpdate = todoservice.Savetodo(todo);
-		// if (todoUpdate != null) {
 		return new ResponseEntity<Todo>(todo, HttpStatus.OK);
 
-		// }
-		// return ResponseEntity.notFound().build();
+//update
 	}
 
 	@CrossOrigin
@@ -115,8 +102,9 @@ public class TodoJpaResource {
 	public ResponseEntity<Void> updateTodos(@PathVariable String username, @RequestBody Todo todo) {
 
 		// if you need to have @RequestBody then you need to have default constructor
-
-		Todo createTodo = todoservice.Savetodo(todo);
+		todo.setUsername(username);
+		
+		Todo createTodo = todoJpaRepository.save(todo); // todoservice.Savetodo(todo);
 
 //Location
 		// get the current resource url
@@ -126,7 +114,7 @@ public class TodoJpaResource {
 				.toUri();
 
 		return ResponseEntity.created(uri).build();
-
+//create
 	}
 
 }
