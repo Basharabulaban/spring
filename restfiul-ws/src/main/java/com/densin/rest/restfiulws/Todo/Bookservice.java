@@ -17,7 +17,8 @@ public class Bookservice {
 		books.add(new Book(2l, "book 2", "Bashar2"));
 		books.add(new Book(3l, "book 3", "Bashar3"));
 		books.add(new Book(4l, "book 4", "Bashar4"));
-
+		books.add(new Book(5l, "book 5", "Bashar5"));
+		books.add(new Book(6l, "book 6", "Bashar6"));
 
 	}
 	public List<Book> findall() {
