@@ -21,9 +21,9 @@ private static final Logger log= LoggerFactory.getLogger(UserDawServiceCommandLi
 	public void run(String... args) throws Exception {
 		// TODO Auto-generated method stub
 		User user = new User("Bashar","Admin");
-	long insert=	userDaoService.insert(user);
+	long insert=userDaoService.insert(user);
 		
-		
+		log.info("New User is created:"+user);
 	}
 
 }
