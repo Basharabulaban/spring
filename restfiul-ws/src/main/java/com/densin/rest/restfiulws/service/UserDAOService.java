@@ -11,7 +11,7 @@ import com.densin.rest.restfiulws.User.User;
 
 @Repository
 @Transactional
-
+// Command line Runner
 // persistent
 //User jill = new User("Jack",
 
