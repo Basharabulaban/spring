@@ -2,8 +2,8 @@ package com.densin.rest.restfiulws;
 
 import javax.persistence.PersistenceContext;
 
-
-
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -13,7 +13,7 @@ import com.densin.rest.restfiulws.service.UserDAOService;
 @Component  // to be managed from spring services
 
 public class UserDawServiceCommandLineRunner implements CommandLineRunner{
-private static final logger log= LoggerFactory.getLogger(UserDawServiceCommandLineRunner.class);
+private static final Logger log= LoggerFactory.getLogger(UserDawServiceCommandLineRunner.class);
 	
 	@Autowired private UserDAOService userDaoService;
 	
