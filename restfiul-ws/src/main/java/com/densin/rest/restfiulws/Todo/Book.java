@@ -6,6 +6,14 @@ public class Book {
 		return "Book [id=" + id + ", name=" + name + ", auther=" + auther + "]";
 	}
 
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public void setAuther(String auther) {
+		this.auther = auther;
+	}
+
 	long id;
 	String name;
 	String auther;
