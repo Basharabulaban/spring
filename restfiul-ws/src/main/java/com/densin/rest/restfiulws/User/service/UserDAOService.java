@@ -1,4 +1,4 @@
-package com.densin.rest.restfiulws.service;
+package com.densin.rest.restfiulws.User.service;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;

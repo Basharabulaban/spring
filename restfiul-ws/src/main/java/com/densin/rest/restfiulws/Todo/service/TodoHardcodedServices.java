@@ -1,10 +1,12 @@
-package com.densin.rest.restfiulws.Todo;
+package com.densin.rest.restfiulws.Todo.service;
 
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
+
+import com.densin.rest.restfiulws.Todo.Todo;
 
 // this is services
 @Service

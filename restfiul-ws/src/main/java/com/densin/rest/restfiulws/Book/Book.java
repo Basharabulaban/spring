@@ -1,4 +1,4 @@
-package com.densin.rest.restfiulws.Todo;
+package com.densin.rest.restfiulws.Book;
 //test
 public class Book {
 	@Override

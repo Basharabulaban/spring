@@ -9,7 +9,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 import com.densin.rest.restfiulws.User.UserC;
-import com.densin.rest.restfiulws.service.UserDAOService;
+import com.densin.rest.restfiulws.User.service.UserDAOService;
 @Component  // to be managed from spring services
 
 public class UserDawServiceCommandLineRunner implements CommandLineRunner{
@@ -21,7 +21,7 @@ private static final Logger log= LoggerFactory.getLogger(UserDawServiceCommandLi
 	public void run(String... args) throws Exception {
 		// TODO Auto-generated method stub
 		UserC user = new UserC("Bashar","Admin");
-	long insert=userDaoService.insert(user);
+	    long insert=userDaoService.insert(user);
 		
 		log.info("New User is created:"+user);
 	}

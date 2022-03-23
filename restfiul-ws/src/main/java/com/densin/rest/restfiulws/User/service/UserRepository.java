@@ -1,4 +1,4 @@
-package com.densin.rest.restfiulws.service;
+package com.densin.rest.restfiulws.User.service;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
