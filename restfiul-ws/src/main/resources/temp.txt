@@ -1,0 +1,29 @@
+insert into Todo( username,description,target_Date,is_Done) values('basharusr','learn HTML',sysdate(),false);
+insert into Todo( username,description,target_Date,is_Done) values('basharusr','learn Javascript',sysdate(),false);
+insert into Todo( username,description,target_Date,is_Done) values('KOKO77','learn CSS3',sysdate(),false);
+insert into Todo( username,description,target_Date,is_Done) values('KOKO77','learn JPA',sysdate(),false);
+insert into Todo( username,description,target_Date,is_Done) values('KOKO77','learn React',sysdate(),false);
+insert into Todo( username,description,target_Date,is_Done) values('KOKO77','learn Spring Boot',sysdate(),false);
+insert into Todo( username,description,target_Date,is_Done) values('KOKO77','learn Microservices',sysdate(),false);
+insert into Todo( username,description,target_Date,is_Done) values('KOKO77','learn HTML',sysdate(),false);
+insert into Todo( username,description,target_Date,is_Done) values('Yaman','learn Javascript',sysdate(),false);
+insert into Todo( username,description,target_Date,is_Done) values('Ahmad','learn CSS3',sysdate(),false);
+
+
+
+insert into Todo( username,description,target_Date,is_Done) values('basharusr','learn JPA',CURRENT_DATE,false);
+insert into Todo( username,description,target_Date,is_Done) values('basharusr','learn React',CURRENT_DATE,false);
+insert into Todo( username,description,target_Date,is_Done) values('basharusr','learn Spring Boot',CURRENT_DATE,false);
+insert into Todo( username,description,target_Date,is_Done) values('basharusr','learn Microservices',CURRENT_DATE,false);
+
+
+
+
+insert into Todo(id, username,description,target_Date,is_Done) values(10007,'KOKO77','learn CSS3',sysdate(),false);
+insert into Todo(id, username,description,target_Date,is_Done) values(10008,'KOKO77','learn JPA',sysdate(),false);
+insert into Todo(id, username,description,target_Date,is_Done) values(10009,'KOKO77','learn React',sysdate(),false);
+insert into Todo(id, username,description,target_Date,is_Done) values(10010,'KOKO77','learn Spring Boot',sysdate(),false);
+insert into Todo(id, username,description,target_Date,is_Done) values(10011,'KOKO77','learn Microservices',sysdate(),false);
+insert into Todo(id, username,description,target_Date,is_Done) values(10012,'KOKO77','learn HTML',sysdate(),false);
+insert into Todo(id, username,description,target_Date,is_Done) values(10013,'Yaman','learn Javascript',sysdate(),false);
+insert into Todo(id, username,description,target_Date,is_Done) values(10014,'Ahmad','learn CSS3',sysdate(),false);

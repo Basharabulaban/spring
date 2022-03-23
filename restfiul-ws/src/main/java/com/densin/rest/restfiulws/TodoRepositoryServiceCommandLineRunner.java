@@ -11,12 +11,12 @@ import org.springframework.stereotype.Component;
 
 import com.densin.rest.restfiulws.User.UserC;
 
-import com.densin.rest.restfiulws.service.UserRepository;
+import com.densin.rest.restfiulws.User.service.UserRepository;
 
 @Component // to be managed from spring services
 
-public class UserRepositoryServiceCommandLineRunner implements CommandLineRunner {
-	private static final Logger log = LoggerFactory.getLogger(UserRepositoryServiceCommandLineRunner.class);
+public class TodoRepositoryServiceCommandLineRunner implements CommandLineRunner {
+	private static final Logger log = LoggerFactory.getLogger(TodoRepositoryServiceCommandLineRunner.class);
 
 	@Autowired
 	private UserRepository userRepository;
@@ -26,6 +26,8 @@ public class UserRepositoryServiceCommandLineRunner implements CommandLineRunner
 		// TODO Auto-generated method stub
 		UserC user = new UserC("KOKO", "Admin");
 		userRepository.save(user);
+		UserC user1 = new UserC("Yaman", "User");
+		userRepository.save(user1);
 //	User insert=userRepository.save(user);
 
 		log.info("New User is retrieved:" + user);
