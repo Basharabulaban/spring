@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
-import com.densin.rest.restfiulws.User.User;
+import com.densin.rest.restfiulws.User.UserC;
 import com.densin.rest.restfiulws.service.UserDAOService;
 @Component  // to be managed from spring services
 
@@ -20,7 +20,7 @@ private static final Logger log= LoggerFactory.getLogger(UserDawServiceCommandLi
 	@Override
 	public void run(String... args) throws Exception {
 		// TODO Auto-generated method stub
-		User user = new User("Bashar","Admin");
+		UserC user = new UserC("Bashar","Admin");
 	long insert=userDaoService.insert(user);
 		
 		log.info("New User is created:"+user);

@@ -2,8 +2,8 @@ package com.densin.rest.restfiulws.service;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.densin.rest.restfiulws.User.User;
-public interface UserRepository extends JpaRepository<User,Long>  {  // entity you need to manage User
+import com.densin.rest.restfiulws.User.UserC;
+public interface UserRepository extends JpaRepository<UserC,Long>  {  // entity you need to manage User
 
 }
 

@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
-import com.densin.rest.restfiulws.User.User;
+import com.densin.rest.restfiulws.User.UserC;
 
 import com.densin.rest.restfiulws.service.UserRepository;
 
@@ -24,19 +24,21 @@ public class UserRepositoryServiceCommandLineRunner implements CommandLineRunner
 	@Override
 	public void run(String... args) throws Exception {
 		// TODO Auto-generated method stub
-		User user = new User("KOKO", "Admin");
+		UserC user = new UserC("KOKO", "Admin");
 		userRepository.save(user);
 //	User insert=userRepository.save(user);
 
 		log.info("New User is retrieved:" + user);
 
-		Optional<User> specficUser = userRepository.findById(2L);
+		Optional<UserC> specficUser = userRepository.findById(2L);
 
 		log.info("find user 1" + specficUser);
 
 		log.info("find user2" + userRepository.findById(1L));
 
-		List<User> users = userRepository.findAll();
+		List<UserC> users = userRepository.findAll();
+		
+		
 
 	}
 

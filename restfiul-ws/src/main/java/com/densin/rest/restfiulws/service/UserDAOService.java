@@ -6,7 +6,7 @@ import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Repository;
 
-import com.densin.rest.restfiulws.User.User;
+import com.densin.rest.restfiulws.User.UserC;
 
 
 @Repository
@@ -19,7 +19,7 @@ public class UserDAOService {
 	@PersistenceContext
 	
 private EntityManager entityManager;
-public long insert (User user) {
+public long insert (UserC user) {
 	// open Transacton 
 	entityManager.persist(user);  // make change
 	// close transaction

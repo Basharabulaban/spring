@@ -4,7 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 @Entity
-public class User {
+public class UserC {
 
 	@Id
 	@GeneratedValue
@@ -14,7 +14,7 @@ public class User {
 	private String role;
 
 
-	protected User() { // default constrtctor expected from jpa
+	protected UserC() { // default constrtctor expected from jpa
 
 	}
 
@@ -30,7 +30,7 @@ public class User {
 		return role;
 	}
 
-	public User(String name, String role) {
+	public UserC(String name, String role) {
 		super();
 		this.name = name;
 		this.role = role;
