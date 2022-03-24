@@ -85,5 +85,102 @@
 			</plugin>
 		</plugins>
 	</build>
-
+	<profiles>
+			<profile>
+				<id>local</id>
+				<activation>
+					<activeByDefault>true</activeByDefault>
+				</activation>
+				<dependencies>
+				
+				<dependency>
+						<groupId>org.postgresql</groupId>
+						<artifactId>postgresql</artifactId>
+						<scope>runtime</scope>
+					</dependency>
+					<!-- TODO: Add H2 database dependency here -->
+	
+				</dependencies>
+			</profile>
+			<profile>
+				<id>openshift</id>
+				<dependencies>
+					<!-- TODO: Add PostgreSQL database dependency here -->
+				
+					<dependency>
+						<groupId>org.postgresql</groupId>
+						<artifactId>postgresql</artifactId>
+						<scope>runtime</scope>
+					</dependency>
+	
+	
+	
+					<!-- Hibernate -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-entitymanager</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-validator</artifactId>
+		</dependency> 
+				</dependencies>
+	
+	
+				<!-- Hibernate -->
+	
+	
+				<build>
+					<plugins>
+						<plugin>
+							<groupId>org.eclipse.jkube</groupId>
+							<artifactId>openshift-maven-plugin</artifactId>
+							<version>${jkube-maven-plugin.version}</version>
+							<executions>
+								<execution>
+									<id>jkmp</id>
+									<phase>package</phase>
+									<goals>
+										<goal>resource</goal>
+										<goal>build</goal>
+									</goals>
+								</execution>
+							</executions>
+						</plugin>
+					</plugins>
+				</build>
+			</profile>
+		</profiles>
+	
+		<repositories>
+			<repository>
+				<id>jboss-ga-repository</id>
+				<url>https://maven.repository.redhat.com/ga</url>
+				<releases>
+					<enabled>true</enabled>
+					<updatePolicy>daily</updatePolicy>
+				</releases>
+				<snapshots>
+					<enabled>false</enabled>
+					<updatePolicy>daily</updatePolicy>
+				</snapshots>
+				<name>Red Hat GA</name>
+			</repository>
+		</repositories>
+			<pluginRepositories>
+		<pluginRepository>
+			<id>jboss-ga-repository</id>
+			<url>https://maven.repository.redhat.com/ga</url>
+			<releases>
+				<enabled>true</enabled>
+				<updatePolicy>daily</updatePolicy>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+				<updatePolicy>daily</updatePolicy>
+			</snapshots>
+			<name>Red Hat GA</name>
+		</pluginRepository>
+	</pluginRepositories>
+	
 </project>
